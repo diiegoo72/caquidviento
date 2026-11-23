@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Caquiviento</title>
+  <meta name="description" content="Una sorpresa cada día hasta Navidad 🎁">
+  <meta name="theme-color" content="#C0393B">
+
+  <!-- ================================================================
+       VISTA PREVIA AL COMPARTIR (WhatsApp, etc.)
+       👉 Si cambias la URL de GitHub Pages, cámbiala aquí (og:url,
+          og:image y twitter:image). Tiene que ser una URL ABSOLUTA.
+          URL actual: https://diiegoo72.github.io/caquidviento/
+       ================================================================ -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Caquiviento 🎄">
+  <meta property="og:description" content="Una sorpresa cada día hasta Navidad 🎁">
+  <meta property="og:url" content="https://diiegoo72.github.io/caquidviento/">
+  <meta property="og:image" content="https://diiegoo72.github.io/caquidviento/assets/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Calendario de Adviento Caquiviento">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Caquiviento 🎄">
+  <meta name="twitter:description" content="Una sorpresa cada día hasta Navidad 🎁">
+  <meta name="twitter:image" content="https://diiegoo72.github.io/caquidviento/assets/preview.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="fase-cargando">
+  <canvas id="nieve" class="nieve" aria-hidden="true"></canvas>
+
+  <div id="etiqueta-prueba" class="etiqueta-prueba" hidden></div>
+
+  <div class="app">
+    <header class="cabecera">
+      <!-- Adornos colgantes (SVG propio) -->
+      <svg class="colgantes colgantes-izq" viewBox="0 0 90 130" aria-hidden="true" focusable="false">
+        <g stroke="#F3E5CF" stroke-width="1.4" fill="none">
+          <line x1="14" y1="0" x2="14" y2="92"/><line x1="40" y1="0" x2="40" y2="44"/><line x1="66" y1="0" x2="66" y2="22"/>
+        </g>
+        <g fill="#F3E5CF">
+          <!-- regalo -->
+          <rect x="3" y="94" width="22" height="18" rx="2"/><rect x="1" y="89" width="26" height="7" rx="1.5"/>
+          <rect x="12.5" y="89" width="3" height="23" fill="#C0393B"/>
+          <path d="M14 89 q-8 -8 -9 -2 q1 3 9 2z M14 89 q8 -8 9 -2 q-1 3 -9 2z"/>
+          <!-- árbol -->
+          <path d="M40 44 L52 62 H46 L55 76 H25 L34 62 H28Z"/><rect x="37.5" y="76" width="5" height="6"/>
+          <!-- bola -->
+          <rect x="62" y="22" width="8" height="5" rx="1"/><circle cx="66" cy="37" r="11"/>
+          <path d="M56 35 q10 5 20 0" stroke="#C0393B" stroke-width="1.6" fill="none"/>
+        </g>
+        <g fill="#F3E5CF" opacity=".8"><circle cx="28" cy="20" r="1.6"/><circle cx="80" cy="64" r="1.4"/><circle cx="54" cy="100" r="1.8"/><circle cx="5" cy="40" r="1.3"/></g>
+      </svg>
+      <svg class="colgantes colgantes-der" viewBox="0 0 90 130" aria-hidden="true" focusable="false">
+        <g stroke="#F3E5CF" stroke-width="1.4" fill="none">
+          <line x1="24" y1="0" x2="24" y2="22"/><line x1="50" y1="0" x2="50" y2="50"/><line x1="76" y1="0" x2="76" y2="88"/>
+        </g>
+        <g fill="#F3E5CF">
+          <!-- estrella -->
+          <path d="M24 22 l3.6 7.6 8.3 1 -6.1 5.7 1.6 8.2 -7.4 -4.1 -7.4 4.1 1.6 -8.2 -6.1 -5.7 8.3 -1z"/>
+          <!-- regalo -->
+          <rect x="40" y="56" width="20" height="16" rx="2"/><rect x="38" y="51" width="24" height="7" rx="1.5"/>
+          <rect x="48.5" y="51" width="3" height="21" fill="#C0393B"/>
+          <path d="M50 51 q-7 -7 -8 -2 q1 3 8 2z M50 51 q7 -7 8 -2 q-1 3 -8 2z"/>
+          <!-- bola -->
+          <rect x="72" y="88" width="8" height="5" rx="1"/><circle cx="76" cy="103" r="11"/>
+          <circle cx="72" cy="99" r="2.4" fill="#C0393B"/><circle cx="80" cy="106" r="2" fill="#C0393B"/>
+        </g>
+        <g fill="#F3E5CF" opacity=".8"><circle cx="8" cy="60" r="1.6"/><circle cx="36" cy="16" r="1.3"/><circle cx="62" cy="96" r="1.5"/><circle cx="86" cy="30" r="1.3"/></g>
+      </svg>
+
+      <h1 class="titulo">Caquiviento</h1>
+      <p class="subtitulo">Una sorpresa cada día hasta Navidad</p>
+      <p class="anio" aria-hidden="true"><span></span>Diciembre 2026<span></span></p>
+      <p id="proxima" class="proxima" aria-live="off" hidden></p>
+    </header>
+
+    <main>
+      <h2 class="sr-only">Calendario de Adviento</h2>
+      <div id="calendario" class="rejilla"></div>
+
+      <section id="final" class="final" hidden>
+        <p class="final-titulo">Feliz Navidad, Caqui ❤️</p>
+        <p class="final-texto">Gracias por abrir cada cajita conmigo. Puedes volver a verlas todas cuando quieras.</p>
+        <p class="final-firma">— Diego</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Pantalla de espera (antes del 1 de diciembre) -->
+  <div id="espera" class="espera" hidden>
+    <div class="espera-tarjeta" role="dialog" aria-labelledby="espera-titulo" aria-describedby="espera-texto">
+      <p class="espera-titulo" id="espera-titulo">¡Hola, Caqui! 🎄</p>
+      <p class="espera-texto" id="espera-texto">
+        Bienvenida a tu calendario de Adviento más especial. Cada noche, a las 12 en punto,
+        se abrirá una sorpresa nueva. Puedes abrirlas cuando quieras… pero nunca antes de tiempo.
+      </p>
+      <p class="espera-aviso">Todavía no, impaciente 😏<br>Vuelve el 1 de diciembre.</p>
+      <div class="cuenta" role="timer" aria-live="off">
+        <div class="cuenta-bloque"><span id="c-dias">00</span><small>días</small></div>
+        <div class="cuenta-bloque"><span id="c-horas">00</span><small>horas</small></div>
+        <div class="cuenta-bloque"><span id="c-min">00</span><small>min</small></div>
+        <div class="cuenta-bloque"><span id="c-seg">00</span><small>seg</small></div>
+      </div>
+      <p class="espera-firma">Con todo mi cariño, <span>Diego</span></p>
+    </div>
+  </div>
+
+  <!-- Modal con el regalo -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-fondo" data-cerrar></div>
+    <div class="modal-hoja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" tabindex="-1">
+      <button type="button" class="modal-cerrar" data-cerrar aria-label="Cerrar regalo"></button>
+      <div id="modal-contenido" class="modal-contenido"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <button type="button" id="musica" class="boton-musica" aria-pressed="false" aria-label="Activar música"></button>
+
+  <canvas id="confeti" class="confeti" aria-hidden="true"></canvas>
+
+  <script src="js/iconos.js"></script>
+  <script src="js/regalos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

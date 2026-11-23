@@ -1,0 +1,239 @@
+/* =====================================================================
+   🎁 CAQUIVIENTO — LOS REGALOS
+   ---------------------------------------------------------------------
+   Aquí está TODO el contenido del calendario. Puedes editarlo sin tocar
+   nada más. Cada regalo es un objeto { ... } dentro de la lista REGALOS.
+
+   CAMPOS COMUNES (todos los tipos):
+     dia     → número del 1 al 25 (el día de diciembre en que se abre).
+     tipo    → 'vale' | 'invitacion' | 'foto' | 'carta' | 'cancion' | 'video'
+     titulo  → título grande del regalo.
+     texto   → texto principal. Usa \n\n para separar párrafos.
+
+   CAMPOS SEGÚN EL TIPO (todos opcionales):
+     vale        → condiciones: 'letra pequeña del vale'
+     invitacion  → fecha: 'Sábado 12 de diciembre', hora: '21:00', lugar: '...'
+     foto        → imagen: 'assets/fotos/mi-foto.jpg', pie: 'pie de foto'
+     carta       → (solo titulo + texto; el texto puede ser largo)
+     cancion     → spotify: 'https://open.spotify.com/track/...'
+                   (copia el enlace desde Spotify: Compartir → Copiar enlace)
+     video       → video: 'assets/mi-video.mp4'   (vídeo subido al repo)
+                   o youtube: 'ID' o la URL completa de YouTube
+
+   COMBINAR: cualquier regalo puede llevar además 'imagen' (+ 'pie'),
+   'spotify', 'video' o 'youtube' y se mostrarán debajo. Por ejemplo, una
+   carta con una foto, o un vale con una canción.
+
+   IMPORTANTE: respeta las comillas simples '...' y la coma al final de
+   cada regalo. Si un texto lleva un apóstrofo, escríbelo así: \'
+   ===================================================================== */
+
+const REGALOS = [
+  {
+    dia: 1,
+    tipo: 'vale',
+    titulo: 'Vale por una chocolatina',
+    texto: 'Para empezar diciembre con buen pie (y con azúcar). Canjeable al instante, sin colas y sin letra pequeña… bueno, con un poco de letra pequeña.',
+    condiciones: 'Tú eliges la chocolatina, yo la pago. Válido durante todo diciembre. No acumulable con los mordiscos que pienso pedirte.'
+  },
+  {
+    dia: 2,
+    tipo: 'carta',
+    titulo: 'Antes de empezar…',
+    texto: 'Querida Caqui:\n\nSi estás leyendo esto es que ya has descubierto que este diciembre viene cargadito. Durante 25 días vas a encontrar aquí un poco de todo: planes, tonterías, recuerdos y alguna que otra sorpresa que me ha costado guardar en secreto (no sabes lo difícil que es para mí).\n\nSolo una regla: nada de abrir antes de tiempo. Lo sabré. Siempre lo sé.\n\nTe quiero mucho.'
+  },
+  {
+    dia: 3,
+    tipo: 'foto',
+    titulo: 'Un recuerdo bonito',
+    imagen: 'assets/fotos/ejemplo-1.svg',
+    pie: 'Aquí irá una foto nuestra (cámbiala en regalos.js)',
+    texto: 'De todas las fotos que tenemos, esta es de mis favoritas. Mírala bien, que tiene historia.'
+  },
+  {
+    dia: 4,
+    tipo: 'vale',
+    titulo: 'Vale por un masaje de 20 minutos',
+    texto: 'Con aceite, música relajante y toda mi dedicación profesional (titulación pendiente).',
+    condiciones: 'No incluye quejas si me duermo antes que tú. Ampliable a 30 minutos a cambio de una sonrisa.'
+  },
+  {
+    dia: 5,
+    tipo: 'cancion',
+    titulo: 'Canción del día',
+    texto: 'Ponla a todo volumen y baila un poquito, aunque sea en el sofá. Esta me recuerda a ti.',
+    spotify: 'https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn'
+  },
+  {
+    dia: 6,
+    tipo: 'invitacion',
+    titulo: 'Cena a la luz de las velas',
+    texto: 'Ponte guapa (más aún, si es posible). Yo me encargo de todo lo demás.',
+    fecha: 'Sábado 12 de diciembre',
+    hora: '21:00',
+    lugar: 'Sorpresa… pero te va a encantar'
+  },
+  {
+    dia: 7,
+    tipo: 'vale',
+    titulo: 'Vale por elegir la peli',
+    texto: 'Tú eliges, yo no protesto. Ni un suspiro, ni un «otra vez esta?», ni un «es que la vimos el año pasado».',
+    condiciones: 'Incluye palomitas. No incluye que me mantenga despierto hasta el final.'
+  },
+  {
+    dia: 8,
+    tipo: 'foto',
+    titulo: 'Mira qué guapos',
+    imagen: 'assets/fotos/ejemplo-2.svg',
+    pie: 'Nosotros, versión navideña',
+    texto: 'Prometo que este año hacemos muchas más fotos así.'
+  },
+  {
+    dia: 9,
+    tipo: 'vale',
+    titulo: 'Vale por un desayuno en la cama',
+    texto: 'Tostadas, zumo, café y lo que te apetezca. Servicio de habitaciones a cargo de Diego.',
+    condiciones: 'Avisar con un día de antelación para hacer la compra. Las migas en la cama corren de mi cuenta.'
+  },
+  {
+    dia: 10,
+    tipo: 'video',
+    titulo: 'Un vídeo para hoy',
+    texto: 'Dale al play y prepárate para cantar.',
+    youtube: 'aAkMkVFwAoo'
+  },
+  {
+    dia: 11,
+    tipo: 'invitacion',
+    titulo: 'Patinaje sobre hielo',
+    texto: 'Yo me caeré, tú te reirás, y luego chocolate caliente para recuperarnos.',
+    fecha: 'Domingo 13 de diciembre',
+    hora: '18:00',
+    lugar: 'La pista de hielo de la plaza'
+  },
+  {
+    dia: 12,
+    tipo: 'carta',
+    titulo: 'A mitad de camino',
+    texto: 'Caqui:\n\nYa vamos por la mitad y quería parar un momento para decirte algo sin bromas (bueno, con pocas): gracias por hacer que los días normales se sientan especiales.\n\nMe encanta tu risa, tu manera de enfadarte cuando tienes hambre y cómo me miras cuando digo una tontería. Este calendario es una excusa para recordarte cada día lo mucho que me importas.\n\nSigue abriendo, que lo mejor está por llegar.'
+  },
+  {
+    dia: 13,
+    tipo: 'vale',
+    titulo: 'Vale por un abrazo de 5 minutos',
+    texto: 'Mínimo cinco minutos. Máximo: los que tú quieras. Sin mirar el móvil.',
+    condiciones: 'Canjeable tantas veces como haga falta. Este vale no caduca nunca.'
+  },
+  {
+    dia: 14,
+    tipo: 'foto',
+    titulo: 'Nuestro rincón favorito',
+    imagen: 'assets/fotos/ejemplo-3.svg',
+    pie: '¿Te acuerdas de este día?',
+    texto: 'Hay sitios que se vuelven nuestros sin darnos cuenta.'
+  },
+  {
+    dia: 15,
+    tipo: 'invitacion',
+    titulo: 'Mercadillo navideño',
+    texto: 'Luces, castañas, figuritas para el belén que no necesitamos… y churros con chocolate al final.',
+    fecha: 'Viernes 18 de diciembre',
+    hora: '19:30',
+    lugar: 'Plaza Mayor'
+  },
+  {
+    dia: 16,
+    tipo: 'vale',
+    titulo: 'Vale por un día sin fregar platos',
+    texto: 'Hoy los platos son cosa mía. Tú solo tienes que mirar y decirme que lo hago fenomenal.',
+    condiciones: 'Incluye recoger la mesa. No incluye que no te pida que me sujetes el móvil mientras friego.'
+  },
+  {
+    dia: 17,
+    tipo: 'cancion',
+    titulo: 'Otra para la lista',
+    texto: 'Un clásico que no puede faltar en diciembre. Prohibido no cantar el estribillo.',
+    spotify: 'https://open.spotify.com/track/2FRnf9qhLbvw8fu4IBXx78'
+  },
+  {
+    dia: 18,
+    tipo: 'vale',
+    titulo: 'Vale por una tarde de manta y peli navideña',
+    texto: 'Manta, chocolate caliente y la peli navideña más ñoña que encuentres.',
+    condiciones: 'Pijama obligatorio. Calcetines gordos muy recomendados.'
+  },
+  {
+    dia: 19,
+    tipo: 'foto',
+    titulo: 'Para la nevera',
+    imagen: 'assets/fotos/ejemplo-4.svg',
+    pie: 'Esta merece imprimirse',
+    texto: 'Si quieres, la imprimimos y la ponemos en la nevera con un imán horrible de los que tenemos.'
+  },
+  {
+    dia: 20,
+    tipo: 'vale',
+    titulo: 'Vale por un «tienes razón»',
+    texto: 'Úsalo con sabiduría: en la próxima discusión, sea cual sea el tema, me rendiré con elegancia y diré «tienes razón».',
+    condiciones: 'Un solo uso. Diego se reserva el derecho a poner cara de que no está de acuerdo.'
+  },
+  {
+    dia: 21,
+    tipo: 'invitacion',
+    titulo: 'Escapada sorpresa',
+    texto: 'Haz una mochila pequeña. No te puedo contar más. Bueno, sí: va a ser genial.',
+    fecha: 'Por confirmar 🤫',
+    lugar: 'Secreto de Estado'
+  },
+  {
+    dia: 22,
+    tipo: 'vale',
+    titulo: 'Vale por tu comida favorita',
+    texto: 'Cocino yo tu plato favorito (o lo intento con muchas ganas).',
+    condiciones: 'Si sale mal, pedimos pizza y hacemos como que no ha pasado nada.',
+    spotify: 'https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn'
+  },
+  {
+    dia: 23,
+    tipo: 'carta',
+    titulo: 'Casi, casi',
+    texto: 'Caqui:\n\nYa solo quedan dos días. Espero que este calendario te haya sacado alguna sonrisa cada mañana (o cada noche, si eres de las que lo abren a las 00:00 en punto, que te conozco).\n\nMañana es Nochebuena y pasado… bueno, pasado ya verás.'
+  },
+  {
+    dia: 24,
+    tipo: 'carta',
+    titulo: 'Feliz Nochebuena',
+    texto: 'Esta noche toca cenar mucho, reír más y brindar por todo lo que nos queda por vivir juntos.\n\nMañana a las 00:00 se abre la última casilla. Esa es la más especial de todas.',
+    imagen: 'assets/fotos/ejemplo-2.svg',
+    pie: 'Nochebuena 2026'
+  },
+  {
+    // 🎄 EL GRAN DÍA — tiene un diseño especial.
+    // Sube tu vídeo como assets/video25.mp4 (o usa youtube: 'ID' en su lugar).
+    dia: 25,
+    tipo: 'video',
+    titulo: 'Feliz Navidad, Caqui',
+    texto: 'Este es mi regalo más especial: un mensaje solo para ti. Dale al play.',
+    video: 'assets/video25.mp4'
+  }
+];
+
+/* ---------------------------------------------------------------------
+   💬 Mensajes graciosos al tocar una casilla que aún no toca.
+   {N} se sustituye por el número de la casilla.
+   --------------------------------------------------------------------- */
+const MENSAJES_BLOQUEO = [
+  'Quieta ahí, Caqui. Esto todavía no toca 🙅‍♀️',
+  '¿Intentando hacer trampa? Te estoy viendo 👀',
+  'Error 404: regalo todavía sin envolver 🎁',
+  'Si la abres antes de tiempo se convierte en un calcetín 🧦',
+  'Paciencia, que los buenos regalos tardan en llegar ✨',
+  'Ni con súplicas. Vuelve el día {N} 😌',
+  'Los elfos siguen trabajando en esta. Vuelve el {N} de diciembre 🧝',
+  'Acceso denegado. Contraseña: paciencia 🔒',
+  'Esta casilla está más cerrada que la farmacia un domingo 💊',
+  'Te he dicho que no. Bueno, que todavía no 🤭',
+  'Papá Noel ha visto eso. Te restamos un punto 🎅',
+  'Tranquila, que el día {N} llega antes de lo que crees ⏳',
+  'Sigue tocando, que no se va a abrir. Pero me hace gracia 😂'
+];
