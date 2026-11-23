@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- Página auxiliar para generar assets/preview.png (1200×630).
+     Ábrela a 1200×630 y haz una captura (ver README). No se enlaza desde la web. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Fredoka', sans-serif;
+    color: #F3E5CF;
+    background: radial-gradient(110% 90% at 30% 20%, #CB4446 0%, #C0393B 45%, #A82F31 100%);
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    align-items: center;
+    padding: 0 56px 0 40px;
+    position: relative;
+  }
+  .izq { text-align: center; position: relative; z-index: 1; }
+  h1 { margin: 0; font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 134px; line-height: 1; text-shadow: 0 5px 0 rgba(110,18,20,.35); }
+  .sub { margin: 18px 0 0; font-weight: 600; font-size: 28px; letter-spacing: .06em; text-transform: uppercase; }
+  .anio { margin: 14px 0 0; font-weight: 500; font-size: 22px; letter-spacing: .35em; opacity: .85; }
+  .rejilla { display: grid; grid-template-columns: repeat(4, 130px); grid-auto-rows: 130px; gap: 12px; justify-content: end; }
+  .c { position: relative; border-radius: 22px; overflow: hidden; box-shadow: 0 5px 0 rgba(90,10,12,.25), 0 10px 20px rgba(90,10,12,.2); }
+  .rosa { background: #F2A3A3; color: #1F9B57; } .crema { background: #F3E5CF; color: #1F9B57; } .verde { background: #1F9B57; color: #F3E5CF; }
+  .n { position: absolute; top: 12px; left: 16px; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -.03em; }
+  .centro .n { inset: 0; display: grid; place-items: center; font-size: 76px; }
+  .i { position: absolute; right: 8px; bottom: 8px; width: 74px; height: 74px; }
+  .i svg { width: 100%; height: 100%; }
+  .oro { background: radial-gradient(130% 120% at 85% 20%, #26AE63, #1F9B57 45%, #157A43); box-shadow: inset 0 0 0 4px #E8B64C, 0 5px 0 rgba(90,10,12,.25); }
+  .oro .n { color: #F6D57A; font-size: 84px; top: 50%; left: 22px; transform: translateY(-50%); }
+  .oro .i { width: 120px; height: 120px; right: 14px; bottom: 5px; }
+  .colg { position: absolute; top: 0; width: 120px; }
+  .copos { position: absolute; inset: 0; }
+  .copos i { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: .6; }
+</style>
+</head>
+<body>
+  <div class="copos" id="copos"></div>
+  <svg class="colg" style="left:40px" viewBox="0 0 90 130"><g stroke="#F3E5CF" stroke-width="1.4"><line x1="14" y1="0" x2="14" y2="92"/><line x1="40" y1="0" x2="40" y2="44"/><line x1="66" y1="0" x2="66" y2="22"/></g><g fill="#F3E5CF"><rect x="3" y="94" width="22" height="18" rx="2"/><rect x="1" y="89" width="26" height="7" rx="1.5"/><rect x="12.5" y="89" width="3" height="23" fill="#C0393B"/><path d="M40 44 L52 62 H46 L55 76 H25 L34 62 H28Z"/><rect x="37.5" y="76" width="5" height="6"/><rect x="62" y="22" width="8" height="5" rx="1"/><circle cx="66" cy="37" r="11"/></g></svg>
+  <svg class="colg" style="left:400px" viewBox="0 0 90 130"><g stroke="#F3E5CF" stroke-width="1.4"><line x1="24" y1="0" x2="24" y2="22"/><line x1="50" y1="0" x2="50" y2="50"/><line x1="76" y1="0" x2="76" y2="70"/></g><g fill="#F3E5CF"><path d="M24 22 l3.6 7.6 8.3 1 -6.1 5.7 1.6 8.2 -7.4 -4.1 -7.4 4.1 1.6 -8.2 -6.1 -5.7 8.3 -1z"/><rect x="40" y="56" width="20" height="16" rx="2"/><rect x="38" y="51" width="24" height="7" rx="1.5"/><rect x="48.5" y="51" width="3" height="21" fill="#C0393B"/><rect x="72" y="70" width="8" height="5" rx="1"/><circle cx="76" cy="85" r="11"/></g></svg>
+
+  <div class="izq">
+    <h1>Caquiviento</h1>
+    <p class="sub">Una sorpresa cada día hasta Navidad</p>
+    <p class="anio">— DICIEMBRE 2026 —</p>
+  </div>
+
+  <div class="rejilla" id="rejilla"></div>
+
+  <script src="../js/iconos.js"></script>
+  <script>
+    const celdas = [
+      ['verde', 14, 'guirnalda', 2, 1], ['rosa', 3, 'calcetines', 1, 2], ['crema', 9, 'estrella'],
+      ['rosa', 21], ['crema', 6], ['crema', 1, 'arbol'], ['verde', 12, 'jengibre', 2, 1], ['rosa', 11, 'reno'], ['crema', 24, 'regalo'],
+      ['oro', 25, 'lazo', 4, 1]
+    ];
+    const r = document.getElementById('rejilla');
+    for (const [color, n, ilus, w = 1, h = 1] of celdas) {
+      const d = document.createElement('div');
+      d.className = `c ${color}${ilus ? '' : ' centro'}`;
+      d.style.gridColumn = `span ${w}`; d.style.gridRow = `span ${h}`;
+      let i = ilus ? `<span class="i">${ICONOS[ilus]}</span>` : '';
+      if (ilus === 'guirnalda') i = `<span class="i" style="left:0;right:0;width:auto;height:70px;bottom:0">${ICONOS[ilus]}</span>`;
+      if (ilus === 'calcetines') i = `<span class="i" style="width:110px;height:130px;right:10px">${ICONOS[ilus]}</span>`;
+      if (ilus === 'jengibre') i = `<span class="i" style="width:110px;height:110px">${ICONOS[ilus]}</span>`;
+      d.innerHTML = `${i}<span class="n">${n}</span>`;
+      r.appendChild(d);
+    }
+    const c = document.getElementById('copos');
+    for (let k = 0; k < 60; k++) {
+      const e = document.createElement('i');
+      const s = 2 + Math.random() * 5;
+      Object.assign(e.style, { left: Math.random() * 1200 + 'px', top: Math.random() * 630 + 'px', width: s + 'px', height: s + 'px', opacity: .25 + Math.random() * .5 });
+      c.appendChild(e);
+    }
+  </script>
+</body>
+</html>
