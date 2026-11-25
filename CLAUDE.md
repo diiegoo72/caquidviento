@@ -11,6 +11,15 @@ Calendario de Adviento web, regalo de Diego para su novia Andrea ("Caqui"). Ya e
 - Sin frameworks ni build: HTML + CSS + JS puro. Ilustraciones en SVG propio (nada de imágenes con copyright). `referencia.png` es solo referencia visual y no se commitea.
 - Mobile-first (ella usa Android/Chrome): nada debe desbordar a 360 px, áreas táctiles ≥ 44 px, respetar `prefers-reduced-motion`.
 
+## Vocabulario nuestro (úsalo en todo texto nuevo)
+Diego irá diciendo más motes y expresiones: añádelos aquí, al array `MOTES` de `js/regalos.js` si es un mote, y úsalos en los textos. Repártelos de forma natural, sin meterlos en todas las frases.
+
+**Motes de Andrea:** Caqui, Caquiñotérreo, Caquiñoterrenal, Al-Caquet, Caq, Caquet, Caquiño, Cagarro. En `MENSAJES_BLOQUEO`, `{MOTE}` se sustituye por uno al azar (y `{N}` por el día). El saludo de la pantalla de espera también usa un mote al azar.
+
+**Expresiones:**
+- «Escolta!» → para decir «escucha» u «oye».
+- «Tah como ilipollah» → para decirle que está tonta, que espabile (en broma).
+
 ## Estructura
 - `index.html` — página, metas Open Graph (URL absoluta de GitHub Pages).
 - `css/styles.css` — estilos. Paleta: rojo `#C0393B`, rosa `#F2A3A3`, crema `#F3E5CF`, verde `#1F9B57`, oro `#E8B64C`. Fuentes: Great Vibes (título), Fredoka (números/UI), Dancing Script (firma), Caveat (cartas).

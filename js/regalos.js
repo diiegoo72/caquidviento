@@ -33,14 +33,14 @@ const REGALOS = [
     dia: 1,
     tipo: 'vale',
     titulo: 'Vale por una chocolatina',
-    texto: 'Para empezar diciembre con buen pie (y con azúcar). Canjeable al instante, sin colas y sin letra pequeña… bueno, con un poco de letra pequeña.',
+    texto: 'Escolta, Caquiño: para empezar diciembre con buen pie (y con azúcar). Canjeable al instante, sin colas y sin letra pequeña… bueno, con un poco de letra pequeña.',
     condiciones: 'Tú eliges la chocolatina, yo la pago. Válido durante todo diciembre. No acumulable con los mordiscos que pienso pedirte.'
   },
   {
     dia: 2,
     tipo: 'carta',
     titulo: 'Antes de empezar…',
-    texto: 'Querida Caqui:\n\nSi estás leyendo esto es que ya has descubierto que este diciembre viene cargadito. Durante 25 días vas a encontrar aquí un poco de todo: planes, tonterías, recuerdos y alguna que otra sorpresa que me ha costado guardar en secreto (no sabes lo difícil que es para mí).\n\nSolo una regla: nada de abrir antes de tiempo. Lo sabré. Siempre lo sé.\n\nTe quiero mucho.'
+    texto: 'Querida Caquiñoterrenal:\n\nSi estás leyendo esto es que ya has descubierto que este diciembre viene cargadito. Durante 25 días vas a encontrar aquí un poco de todo: planes, tonterías, recuerdos y alguna que otra sorpresa que me ha costado guardar en secreto (no sabes lo difícil que es para mí).\n\nEscolta! Solo una regla: nada de abrir antes de tiempo. Lo sabré. Siempre lo sé.\n\nTe quiero mucho.'
   },
   {
     dia: 3,
@@ -55,7 +55,7 @@ const REGALOS = [
     tipo: 'vale',
     titulo: 'Vale por un masaje de 20 minutos',
     texto: 'Con aceite, música relajante y toda mi dedicación profesional (titulación pendiente).',
-    condiciones: 'No incluye quejas si me duermo antes que tú. Ampliable a 30 minutos a cambio de una sonrisa.'
+    condiciones: 'No incluye quejas si me duermo antes que tú. Ampliable a 30 minutos a cambio de una sonrisa, Al-Caquet.'
   },
   {
     dia: 5,
@@ -77,7 +77,7 @@ const REGALOS = [
     dia: 7,
     tipo: 'vale',
     titulo: 'Vale por elegir la peli',
-    texto: 'Tú eliges, yo no protesto. Ni un suspiro, ni un «otra vez esta?», ni un «es que la vimos el año pasado».',
+    texto: 'Tú eliges, yo no protesto. Ni un suspiro, ni un «¿otra vez esta?», ni un «es que la vimos el año pasado». Y si protesto, me dices «tah como ilipollah» y me callo.',
     condiciones: 'Incluye palomitas. No incluye que me mantenga despierto hasta el final.'
   },
   {
@@ -92,7 +92,7 @@ const REGALOS = [
     dia: 9,
     tipo: 'vale',
     titulo: 'Vale por un desayuno en la cama',
-    texto: 'Tostadas, zumo, café y lo que te apetezca. Servicio de habitaciones a cargo de Diego.',
+    texto: 'Tostadas, zumo, café y lo que te apetezca, Caquet. Servicio de habitaciones a cargo de Diego.',
     condiciones: 'Avisar con un día de antelación para hacer la compra. Las migas en la cama corren de mi cuenta.'
   },
   {
@@ -106,7 +106,7 @@ const REGALOS = [
     dia: 11,
     tipo: 'invitacion',
     titulo: 'Patinaje sobre hielo',
-    texto: 'Yo me caeré, tú te reirás, y luego chocolate caliente para recuperarnos.',
+    texto: 'Yo me caeré, tú te reirás de mí, cagarro, y luego chocolate caliente para recuperarnos.',
     fecha: 'Domingo 13 de diciembre',
     hora: '18:00',
     lugar: 'La pista de hielo de la plaza'
@@ -115,13 +115,13 @@ const REGALOS = [
     dia: 12,
     tipo: 'carta',
     titulo: 'A mitad de camino',
-    texto: 'Caqui:\n\nYa vamos por la mitad y quería parar un momento para decirte algo sin bromas (bueno, con pocas): gracias por hacer que los días normales se sientan especiales.\n\nMe encanta tu risa, tu manera de enfadarte cuando tienes hambre y cómo me miras cuando digo una tontería. Este calendario es una excusa para recordarte cada día lo mucho que me importas.\n\nSigue abriendo, que lo mejor está por llegar.'
+    texto: 'Caquiñotérreo mío:\n\nYa vamos por la mitad y quería parar un momento para decirte algo sin bromas (bueno, con pocas): gracias por hacer que los días normales se sientan especiales.\n\nMe encanta tu risa, tu manera de enfadarte cuando tienes hambre y cómo me miras cuando digo una tontería. Este calendario es una excusa para recordarte cada día lo mucho que me importas.\n\nSigue abriendo, que lo mejor está por llegar.'
   },
   {
     dia: 13,
     tipo: 'vale',
     titulo: 'Vale por un abrazo de 5 minutos',
-    texto: 'Mínimo cinco minutos. Máximo: los que tú quieras. Sin mirar el móvil.',
+    texto: 'Mínimo cinco minutos. Máximo: los que tú quieras, Caq. Sin mirar el móvil.',
     condiciones: 'Canjeable tantas veces como haga falta. Este vale no caduca nunca.'
   },
   {
@@ -145,7 +145,7 @@ const REGALOS = [
     dia: 16,
     tipo: 'vale',
     titulo: 'Vale por un día sin fregar platos',
-    texto: 'Hoy los platos son cosa mía. Tú solo tienes que mirar y decirme que lo hago fenomenal.',
+    texto: 'Escolta! Hoy los platos son cosa mía. Tú solo tienes que mirar y decirme que lo hago fenomenal.',
     condiciones: 'Incluye recoger la mesa. No incluye que no te pida que me sujetes el móvil mientras friego.'
   },
   {
@@ -175,13 +175,13 @@ const REGALOS = [
     tipo: 'vale',
     titulo: 'Vale por un «tienes razón»',
     texto: 'Úsalo con sabiduría: en la próxima discusión, sea cual sea el tema, me rendiré con elegancia y diré «tienes razón».',
-    condiciones: 'Un solo uso. Diego se reserva el derecho a poner cara de que no está de acuerdo.'
+    condiciones: 'Un solo uso. Diego se reserva el derecho a poner cara de que no está de acuerdo (y a pensar «tah como ilipollah» muy bajito).'
   },
   {
     dia: 21,
     tipo: 'invitacion',
     titulo: 'Escapada sorpresa',
-    texto: 'Haz una mochila pequeña. No te puedo contar más. Bueno, sí: va a ser genial.',
+    texto: 'Escolta, Al-Caquet: haz una mochila pequeña. No te puedo contar más. Bueno, sí: va a ser genial.',
     fecha: 'Por confirmar 🤫',
     lugar: 'Secreto de Estado'
   },
@@ -197,7 +197,7 @@ const REGALOS = [
     dia: 23,
     tipo: 'carta',
     titulo: 'Casi, casi',
-    texto: 'Caqui:\n\nYa solo quedan dos días. Espero que este calendario te haya sacado alguna sonrisa cada mañana (o cada noche, si eres de las que lo abren a las 00:00 en punto, que te conozco).\n\nMañana es Nochebuena y pasado… bueno, pasado ya verás.'
+    texto: 'Escolta, Caquiño:\n\nYa solo quedan dos días. Espero que este calendario te haya sacado alguna sonrisa cada mañana (o cada noche, si eres de las que lo abren a las 00:00 en punto, que te conozco).\n\nMañana es Nochebuena y pasado… bueno, pasado ya verás.'
   },
   {
     dia: 24,
@@ -219,21 +219,40 @@ const REGALOS = [
 ];
 
 /* ---------------------------------------------------------------------
+   🐣 MOTES de Caqui. Se usan al azar donde ponga {MOTE}
+   (en los mensajes de abajo y en el saludo de la pantalla de espera).
+   Añade los que quieras.
+   --------------------------------------------------------------------- */
+const MOTES = [
+  'Caqui',
+  'Caquiñotérreo',
+  'Caquiñoterrenal',
+  'Al-Caquet',
+  'Caq',
+  'Caquet',
+  'Caquiño',
+  'Cagarro'
+];
+
+/* ---------------------------------------------------------------------
    💬 Mensajes graciosos al tocar una casilla que aún no toca.
-   {N} se sustituye por el número de la casilla.
+   {N} se sustituye por el número de la casilla y {MOTE} por un mote al azar.
    --------------------------------------------------------------------- */
 const MENSAJES_BLOQUEO = [
-  'Quieta ahí, Caqui. Esto todavía no toca 🙅‍♀️',
-  '¿Intentando hacer trampa? Te estoy viendo 👀',
+  'Quieta ahí, {MOTE}. Esto todavía no toca 🙅‍♀️',
+  'Escolta! Esta todavía no toca, {MOTE} 🙅‍♀️',
+  'Tah como ilipollah, {MOTE}. Que es el día {N} 🙄',
+  'Tah como ilipollah si crees que tocándola más se va a abrir 😂',
+  '¿Intentando hacer trampa, Al-Caquet? Te estoy viendo 👀',
   'Error 404: regalo todavía sin envolver 🎁',
-  'Si la abres antes de tiempo se convierte en un calcetín 🧦',
-  'Paciencia, que los buenos regalos tardan en llegar ✨',
-  'Ni con súplicas. Vuelve el día {N} 😌',
-  'Los elfos siguen trabajando en esta. Vuelve el {N} de diciembre 🧝',
-  'Acceso denegado. Contraseña: paciencia 🔒',
+  'Si la abres antes de tiempo se convierte en un calcetín, cagarro 🧦',
+  'Escolta, Caquiñotérreo: los buenos regalos tardan en llegar ✨',
+  'Ni con súplicas, Caq. Vuelve el día {N} 😌',
+  'Los elfos siguen envolviendo esta. Vuelve el {N} de diciembre, {MOTE} 🧝',
+  'Acceso denegado a seres caquiñoterrenales 🔒',
   'Esta casilla está más cerrada que la farmacia un domingo 💊',
-  'Te he dicho que no. Bueno, que todavía no 🤭',
-  'Papá Noel ha visto eso. Te restamos un punto 🎅',
-  'Tranquila, que el día {N} llega antes de lo que crees ⏳',
-  'Sigue tocando, que no se va a abrir. Pero me hace gracia 😂'
+  'Papá Noel ha visto eso, Caquet. Te restamos un punto 🎅',
+  'Escolta! Que el día {N} llega antes de lo que crees ⏳',
+  'Te he dicho que no, Caquiño. Bueno, que todavía no 🤭',
+  'Sigue tocando, {MOTE}, que no se va a abrir. Pero me hace gracia 😂'
 ];

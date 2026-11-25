@@ -124,6 +124,7 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const parrafos = t => esc(t).split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
   const azar = lista => lista[Math.floor(Math.random() * lista.length)];
+  const moteAlAzar = () => (typeof MOTES !== 'undefined' && MOTES.length ? azar(MOTES) : 'Caqui');
 
   function partirTiempo(ms) {
     const s = Math.max(0, Math.floor(ms / 1000));
@@ -296,7 +297,7 @@
     let i;
     do { i = Math.floor(Math.random() * MENSAJES_BLOQUEO.length); } while (i === ultimoMensaje && MENSAJES_BLOQUEO.length > 1);
     ultimoMensaje = i;
-    mostrarToast(MENSAJES_BLOQUEO[i].replace(/\{N\}/g, dia));
+    mostrarToast(MENSAJES_BLOQUEO[i].replace(/\{N\}/g, dia).replace(/\{MOTE\}/g, () => moteAlAzar()));
     if (navigator.vibrate) { try { navigator.vibrate(40); } catch (e) { /* nada */ } }
   }
 
@@ -734,6 +735,10 @@
   /* =========================================================
      Arranque
      ========================================================= */
+  // Saludo de la pantalla de espera con un mote al azar
+  const elMote = $('#mote-saludo');
+  if (elMote) elMote.textContent = moteAlAzar();
+
   iniciarNieve();
   bucle();
 
