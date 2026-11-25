@@ -414,7 +414,7 @@ body.modal-abierto { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 16px;
+  padding: 20px 16px calc(84px + env(safe-area-inset-bottom));
   background: radial-gradient(circle at 50% 45%, rgba(90, 10, 12, .1), rgba(70, 6, 8, .5));
   overflow-y: auto;
 }
@@ -791,7 +791,7 @@ body.modal-abierto { overflow: hidden; }
   position: fixed;
   right: 16px;
   bottom: calc(16px + env(safe-area-inset-bottom));
-  z-index: 30;
+  z-index: 45; /* por encima de la pantalla de espera, debajo del modal */
   width: 52px; height: 52px;
   display: grid; place-items: center;
   padding: 0;
