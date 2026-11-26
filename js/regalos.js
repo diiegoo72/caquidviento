@@ -115,14 +115,14 @@ const REGALOS = [
     dia: 12,
     tipo: 'carta',
     titulo: 'A mitad de camino',
-    texto: 'Caquiñotérreo mío:\n\nYa vamos por la mitad y quería parar un momento para decirte algo sin bromas (bueno, con pocas): gracias por hacer que los días normales se sientan especiales.\n\nMe encanta tu risa, tu manera de enfadarte cuando tienes hambre y cómo me miras cuando digo una tontería. Este calendario es una excusa para recordarte cada día lo mucho que me importas.\n\nSigue abriendo, que lo mejor está por llegar.'
+    texto: 'Caquiñotérreo mío:\n\nYa vamos por la mitad y quería parar un momento para decirte algo sin bromas (bueno, con pocas): gracias por hacer que los días normales se sientan especiales.\n\nMe encanta tu risa, tu manera de enfadarte cuando tienes hambre y cómo me miras cuando digo una tontería. Este calendario es una excusa para recordarte cada día lo mucho que me importas. Iug, qué empalagoso me ha quedado.\n\nSigue abriendo, que lo mejor está por llegar.'
   },
   {
     dia: 13,
     tipo: 'vale',
     titulo: 'Vale por un abrazo de 5 minutos',
     texto: 'Mínimo cinco minutos. Máximo: los que tú quieras, Caq. Sin mirar el móvil.',
-    condiciones: 'Canjeable tantas veces como haga falta. Este vale no caduca nunca.'
+    condiciones: 'Canjeable tantas veces como haga falta. Este vale no caduca nunca. Promete que lo usarás mucho 🤞'
   },
   {
     dia: 14,
@@ -189,7 +189,7 @@ const REGALOS = [
     dia: 22,
     tipo: 'vale',
     titulo: 'Vale por tu comida favorita',
-    texto: 'Cocino yo tu plato favorito (o lo intento con muchas ganas).',
+    texto: 'Cocino yo tu plato favorito (o lo intento con muchas ganas). Si me sale bien, quiero un «añe-a-se-o!».',
     condiciones: 'Si sale mal, pedimos pizza y hacemos como que no ha pasado nada.',
     spotify: 'https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn'
   },
@@ -231,7 +231,8 @@ const MOTES = [
   'Caq',
   'Caquet',
   'Caquiño',
-  'Cagarro'
+  'Cagarro',
+  'Anotop'
 ];
 
 /* ---------------------------------------------------------------------
@@ -254,7 +255,11 @@ const MENSAJES_BLOQUEO = [
   'Papá Noel ha visto eso, Caquet. Te restamos un punto 🎅',
   'Escolta! Que el día {N} llega antes de lo que crees ⏳',
   'Te he dicho que no, Caquiño. Bueno, que todavía no 🤭',
-  'Sigue tocando, {MOTE}, que no se va a abrir. Pero me hace gracia 😂'
+  'Sigue tocando, {MOTE}, que no se va a abrir. Pero me hace gracia 😂',
+  'Onichan, que esta todavía no toca 🙅‍♀️',
+  'Promete que no la vas a tocar más hasta el día {N} 🤞',
+  'Escolta, Anotop: el día {N}. Ni uno antes 😌',
+  '¿Quieres abrirla? Añe-a-se-o… pero no 😂'
 ];
 
 /* ---------------------------------------------------------------------
@@ -282,5 +287,10 @@ const FRASES_ESPERA = [
   'Vuelve mañana y verás que queda menos 😌',
   'Besos de fresa mientras tanto 🍓',
   'Ni Papá Noel tiene tanta paciencia como tú, {MOTE}',
-  'Pon la musiquita y espérate tranquila 🎶'
+  'Pon la musiquita y espérate tranquila 🎶',
+  'Promete que vendrás cada noche a abrir tu cajita 🤞',
+  'Te quiero más que al chocolate caliente… iug 🤭',
+  'Onichan, ¿ya has puesto la musiquita? 🎶',
+  '¿Has venido a mirar el contador? Añe-a-se-o 👏',
+  'Ya queda menos, Anotop ✨'
 ];
