@@ -19,6 +19,10 @@ Diego irá diciendo más motes y expresiones: añádelos aquí, al array `MOTES`
 **Expresiones:**
 - «Escolta!» → para decir «escucha» u «oye».
 - «Tah como ilipollah» → para decirle que está tonta, que espabile (en broma).
+- Otras que usa Diego al escribir: «mi shica», «de to un poco vaya», «Besos de fresa» (despedida).
+
+## Pantalla del contador (antes del 1/12)
+Textos fijos en `index.html` (`#espera`). En `js/regalos.js`: `FRASES_FALTA` (línea bajo el contador según las noches que quedan / última hora) y `FRASES_ESPERA` (frases que rotan cada 6 s). Tocar el mote del saludo lo cambia por otro; el saludo se encoge solo para caber en una línea (`ajustarSaludo` en `app.js`).
 
 ## Estructura
 - `index.html` — página, metas Open Graph (URL absoluta de GitHub Pages).

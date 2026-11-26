@@ -256,3 +256,31 @@ const MENSAJES_BLOQUEO = [
   'Te he dicho que no, Caquiño. Bueno, que todavía no 🤭',
   'Sigue tocando, {MOTE}, que no se va a abrir. Pero me hace gracia 😂'
 ];
+
+/* ---------------------------------------------------------------------
+   ⏳ PANTALLA DEL CONTADOR (antes del 1 de diciembre)
+   FRASES_FALTA: la línea bajo el contador, según lo que quede.
+     {NOCHES} = noches que faltan, {MOTE} = mote al azar.
+   --------------------------------------------------------------------- */
+const FRASES_FALTA = {
+  variasNoches: 'Quedan {NOCHES} noches, {MOTE} 🌙',
+  unaNoche: '¡Mañana empieza, cagarro! Esta noche a las 12 🎁',
+  ultimaHora: '¡Ya casi, Caquiño! No te duermas 😴'
+};
+
+/* Frases que van rotando cada pocos segundos bajo el contador.
+   También pueden llevar {MOTE}. Añade o quita las que quieras. */
+const FRASES_ESPERA = [
+  'Escolta! Que te quiero mucho, aunque seas una impaciente',
+  'Diego está envolviendo cosas a escondidas 🤫',
+  'Mirar el contador no hace que vaya más rápido, {MOTE}',
+  'Los elfos ya están trabajando para ti 🧝',
+  'Hay una cajita con tu nombre esperándote',
+  'Tah como ilipollah si crees que te voy a dar pistas 😏',
+  'Ve calentando el chocolate, que se acerca diciembre ☕',
+  'Escolta, Al-Caquet: 25 sorpresas. Veinticinco.',
+  'Vuelve mañana y verás que queda menos 😌',
+  'Besos de fresa mientras tanto 🍓',
+  'Ni Papá Noel tiene tanta paciencia como tú, {MOTE}',
+  'Pon la musiquita y espérate tranquila 🎶'
+];

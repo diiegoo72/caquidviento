@@ -432,7 +432,42 @@ body.modal-abierto { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(60, 5, 8, .45), inset 0 0 0 3px var(--rosa), inset 0 0 0 7px var(--crema), inset 0 0 0 8.5px rgba(192, 57, 59, .35);
   animation: aparecer .7s ease both;
 }
-.espera-titulo { margin: 0; font-family: var(--f-script); font-size: 2.7rem; line-height: 1.05; color: var(--rojo); }
+.espera-titulo { margin: 0; font-family: var(--f-script); font-size: 2.7rem; line-height: 1.15; color: var(--rojo); white-space: nowrap; }
+/* El mote es un botón secreto: al tocarlo cambia por otro */
+.mote-saludo {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted rgba(192, 57, 59, .35);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+.mote-saludo.salta { animation: saltoMote .45s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes saltoMote {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-8px) scale(1.08) rotate(-3deg); }
+  100% { transform: none; }
+}
+.espera-aviso, .espera-falta, .espera-frase { text-wrap: balance; }
+.espera-falta { margin: 14px 0 0; font-weight: 600; font-size: 1.02rem; color: var(--rojo); }
+.espera-frase {
+  min-height: 2.8em;
+  margin: 6px 0 0;
+  font-family: var(--f-mano);
+  font-size: 1.3rem;
+  line-height: 1.1;
+  color: var(--tinta);
+  opacity: .85;
+  transition: opacity .5s ease;
+}
+.espera-frase.fuera { opacity: 0; }
+.espera-musica { margin: 10px 0 0; font-size: .82rem; color: rgba(58, 42, 34, .7); }
+.espera-musica[hidden] { display: none; }
 .espera-texto { margin: 12px 0 0; font-size: 1rem; line-height: 1.5; }
 .espera-aviso { margin: 14px 0 0; font-weight: 700; font-size: 1.08rem; line-height: 1.35; color: var(--verde); }
 .cuenta {

@@ -125,6 +125,8 @@
   const parrafos = t => esc(t).split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
   const azar = lista => lista[Math.floor(Math.random() * lista.length)];
   const moteAlAzar = () => (typeof MOTES !== 'undefined' && MOTES.length ? azar(MOTES) : 'Caqui');
+  // Sustituye {MOTE} y pega el emoji final a la palabra anterior (que no se quede solo en una línea)
+  const rellenar = texto => texto.replace(/\{MOTE\}/g, () => moteAlAzar()).replace(/ (\S+)$/, ' $1');
 
   function partirTiempo(ms) {
     const s = Math.max(0, Math.floor(ms / 1000));
@@ -228,6 +230,18 @@
     }
   }
 
+  // Frase bajo el contador según lo que quede (solo se reescribe al cambiar de tramo)
+  const elFalta = $('#espera-falta');
+  let tramoFalta = '';
+  function actualizarFalta(restante) {
+    if (!elFalta || typeof FRASES_FALTA === 'undefined') return;
+    const noches = Math.ceil(restante / 86400000);
+    const tramo = restante <= 3600000 ? 'ultimaHora' : noches <= 1 ? 'unaNoche' : 'variasNoches:' + noches;
+    if (tramo === tramoFalta) return;
+    tramoFalta = tramo;
+    elFalta.textContent = rellenar(FRASES_FALTA[tramo.split(':')[0]] || '').replace(/\{NOCHES\}/g, noches);
+  }
+
   function actualizarTextos(ms) {
     const { fase, n } = estado;
     if (fase === 'espera') {
@@ -237,6 +251,7 @@
       elCuenta.m.textContent = dos(t.m);
       elCuenta.s.textContent = dos(t.s);
       elProxima.hidden = true;
+      actualizarFalta(DESBLOQUEO[1] - ms);
     } else if (fase === 'adviento') {
       elProxima.hidden = false;
       if (n < 25) {
@@ -730,17 +745,62 @@
     btnMusica.classList.toggle('sonando', sonando);
     btnMusica.setAttribute('aria-pressed', String(sonando));
     btnMusica.setAttribute('aria-label', sonando ? 'Silenciar música' : 'Activar música');
+    if (sonando) { const aviso = $('#espera-musica'); if (aviso) aviso.hidden = true; }
   });
 
   /* =========================================================
      Arranque
      ========================================================= */
-  // Saludo de la pantalla de espera con un mote al azar
+  // Saludo de la pantalla de espera con un mote al azar, siempre en una línea
   const elMote = $('#mote-saludo');
-  if (elMote) elMote.textContent = moteAlAzar();
+  const elSaludo = $('#espera-titulo');
+  function ajustarSaludo() {
+    if (!elSaludo || elEspera.hidden) return;
+    let px = parseFloat(getComputedStyle(document.documentElement).fontSize) * 2.7;
+    elSaludo.style.fontSize = px + 'px';
+    while (elSaludo.scrollWidth > elSaludo.clientWidth && px > 24) {
+      px -= 1;
+      elSaludo.style.fontSize = px + 'px';
+    }
+  }
+  if (elMote) {
+    elMote.textContent = moteAlAzar();
+    // Secreto: tocar el mote lo cambia por otro distinto
+    elMote.addEventListener('click', () => {
+      if (typeof MOTES === 'undefined' || MOTES.length < 2) return;
+      const otros = MOTES.filter(m => m !== elMote.textContent);
+      elMote.textContent = azar(otros);
+      ajustarSaludo();
+      elMote.classList.remove('salta');
+      void elMote.offsetWidth;
+      elMote.classList.add('salta');
+    });
+  }
+  if (document.fonts) document.fonts.ready.then(ajustarSaludo);
+  window.addEventListener('resize', ajustarSaludo);
+
+  // Frases que van rotando bajo el contador
+  const elFrase = $('#espera-frase');
+  if (elFrase && typeof FRASES_ESPERA !== 'undefined' && FRASES_ESPERA.length) {
+    let ultima = -1;
+    const siguienteFrase = () => {
+      let i;
+      do { i = Math.floor(Math.random() * FRASES_ESPERA.length); } while (FRASES_ESPERA.length > 1 && i === ultima);
+      ultima = i;
+      elFrase.textContent = rellenar(FRASES_ESPERA[i]);
+    };
+    siguienteFrase();
+    setInterval(() => {
+      if (elEspera.hidden || document.hidden) return;
+      if (movimientoReducido.matches) { siguienteFrase(); return; }
+      elFrase.classList.add('fuera');
+      setTimeout(() => { siguienteFrase(); elFrase.classList.remove('fuera'); }, 500);
+    }, 6000);
+  }
 
   iniciarNieve();
   bucle();
+  ajustarSaludo();
 
   if (PRUEBA) {
     if (params.get('reset') === '1') mostrarToast('Progreso borrado 🧹');
