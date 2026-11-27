@@ -303,7 +303,7 @@ const FRASES_ESPERA = [
    --------------------------------------------------------------------- */
 const JUEGO_HOY = {
   fecha: '2026-11-27',
-  objetivo: 15,   // puntos para ganar
+  objetivo: 18,   // puntos para ganar
   segundos: 30,   // duración de la partida
   titulo: '¡Juego del día! 🎮',
   intro: 'Escolta, {MOTE}: hoy no te libras de jugar. Mueve el saco con el dedo y atrapa {OBJETIVO} regalos en {SEGUNDOS} segundos. Ojo con el carbón, que resta.',
@@ -316,5 +316,5 @@ const JUEGO_HOY = {
     'Los elfos se están riendo un poco. Demuéstrales quién manda 🧝'
   ],
   ganar: '¡Añe-a-se-o! 🎉 Lo has conseguido, {MOTE}.',
-  pista: 'Pista del día 1: vete preparando la espalda y los hombros, que tus contracturas tienen los días contados. Música relajante incluida. Promete que no te dormirás a la mitad 🤞💆‍♀️'
+  pista: 'Pista del día 1: vete preparando la espalda y los hombros, que tus contracturas tienen los días contados. Música relajante incluida. Y si te quedas dormida a la mitad, vale: aquí nadie va a ser juzgado 😴💆‍♀️'
 };

@@ -140,14 +140,14 @@
   }
 
   function soltar(progreso) {
-    const malo = Math.random() < 0.2 + progreso * 0.12;
+    const malo = Math.random() < 0.24 + progreso * 0.14;
     const tam = Math.min(W * 0.14, 62) * (0.85 + Math.random() * 0.3);
     cosas.push({
       tipo: malo ? 'carbon' : BUENOS[Math.floor(Math.random() * BUENOS.length)],
       x: tam / 2 + Math.random() * (W - tam),
       y: -tam,
       tam,
-      v: H * (0.34 + progreso * 0.3) * (0.85 + Math.random() * 0.3),
+      v: H * (0.38 + progreso * 0.34) * (0.85 + Math.random() * 0.3),
       rot: Math.random() * Math.PI,
       vr: (Math.random() - 0.5) * 2.4
     });
@@ -178,7 +178,7 @@
     for (const c of cosas) {
       c.y += c.v * dt;
       c.rot += c.vr * dt;
-      if (!c.fin && c.y + c.tam * 0.3 >= boca && c.y < boca + saco.tam * 0.35 && Math.abs(c.x - saco.x) < saco.tam * 0.46) {
+      if (!c.fin && c.y + c.tam * 0.3 >= boca && c.y < boca + saco.tam * 0.35 && Math.abs(c.x - saco.x) < saco.tam * 0.42) {
         c.fin = true;
         if (c.tipo === 'carbon') {
           puntos = Math.max(0, puntos - 2);

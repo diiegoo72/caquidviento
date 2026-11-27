@@ -564,7 +564,7 @@ body.modal-abierto { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(60, 5, 8, .45), inset 0 0 0 3px rgba(192, 57, 59, .18);
   animation: aparecer .35s ease;
 }
-.juego-titulo { margin: 0; font-weight: 700; font-size: 1.6rem; line-height: 1.2; color: var(--rojo); text-wrap: balance; }
+.juego-titulo { margin: 0; font-weight: 700; font-size: 1.6rem; overflow-wrap: break-word; line-height: 1.2; color: var(--rojo); text-wrap: balance; }
 .juego-cuerpo p { margin: 12px 0 0; font-size: 1.05rem; line-height: 1.45; text-wrap: balance; }
 .juego-cuerpo .juego-premio { font-weight: 700; color: var(--verde); }
 .juego-pista {

@@ -126,7 +126,7 @@
   const azar = lista => lista[Math.floor(Math.random() * lista.length)];
   const moteAlAzar = () => (typeof MOTES !== 'undefined' && MOTES.length ? azar(MOTES) : 'Caqui');
   // Sustituye {MOTE} y pega el emoji final a la palabra anterior (que no se quede solo en una línea)
-  const rellenar = texto => texto.replace(/\{MOTE\}/g, () => moteAlAzar()).replace(/ (\S+)$/, ' $1');
+  const rellenar = texto => texto.replace(/\{MOTE\}/g, () => moteAlAzar()).replace(/ ([^\p{L}\p{N}\s]+)$/u, ' $1');
 
   function partirTiempo(ms) {
     const s = Math.max(0, Math.floor(ms / 1000));
