@@ -303,7 +303,7 @@ const FRASES_ESPERA = [
    --------------------------------------------------------------------- */
 const JUEGO_HOY = {
   fecha: '2026-11-27',
-  objetivo: 18,   // puntos para ganar
+  objetivo: 20,   // puntos para ganar
   segundos: 30,   // duración de la partida
   titulo: '¡Juego del día! 🎮',
   intro: 'Escolta, {MOTE}: hoy no te libras de jugar. Mueve el saco con el dedo y atrapa {OBJETIVO} regalos en {SEGUNDOS} segundos. Ojo con el carbón, que resta.',
