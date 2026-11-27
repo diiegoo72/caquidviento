@@ -15,15 +15,14 @@
   const dos = n => String(n).padStart(2, '0');
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-  const CLAVE = 'caquiviento-juego-' + J.fecha;
   const OBJETIVO = J.objetivo || 15;
   const SEGUNDOS = J.segundos || 30;
 
   const p = C.partesMadrid(C.ahora());
   const esHoy = `${p.y}-${dos(p.mo)}-${dos(p.d)}` === J.fecha;
   const forzar = C.PRUEBA && C.params.get('juego') === '1';
+  // No se guarda nada: se puede jugar las veces que quiera y al recargar empieza de cero
   let ganado = false;
-  if (!C.PRUEBA) { try { ganado = localStorage.getItem(CLAVE) === 'ganado'; } catch (e) { /* sin almacenamiento */ } }
 
   const elJuego = $('#juego');
   const lienzo = $('#juego-lienzo');
@@ -35,7 +34,7 @@
   const elTitulo = $('#juego-titulo');
   const elCuerpo = $('#juego-cuerpo');
   const elBoton = $('#juego-boton');
-  const verPista = $('#ver-pista');
+  const jugarOtra = $('#jugar-otra');
   $('#juego-objetivo').textContent = OBJETIVO;
 
   const texto = (t, extra = {}) => C.rellenar(String(t)
@@ -69,20 +68,17 @@
   }
 
   function intro() {
-    mostrarPanel(J.titulo,
-      `<p>${esc(texto(J.intro))}</p><p class="juego-premio">${esc(J.premioIntro || '')}</p>`,
-      '¡A jugar!', empezar);
+    // Si ya ha ganado en esta visita, la pista se queda visible en la intro
+    const premio = ganado ? `<p class="juego-premio">Tu pista 🔑</p>${htmlPista()}`
+      : `<p class="juego-premio">${esc(J.premioIntro || '')}</p>`;
+    mostrarPanel(J.titulo, `<p>${esc(texto(J.intro))}</p>${premio}`, '¡A jugar!', empezar);
   }
 
-  // Botón de la tarjeta de espera para releer la pista
-  verPista.addEventListener('click', () => {
-    abrir();
-    pintarFondo();
-    mostrarPanel('Tu pista 🔑', htmlPista(), 'Cerrar', cerrar);
-  });
+  if (!(forzar || esHoy)) return;
 
-  if (esHoy && ganado) verPista.hidden = false;
-  if (!(forzar || (esHoy && !ganado))) return;
+  // Botón «Jugar otra vez» en la tarjeta de espera (todo el día del juego)
+  jugarOtra.hidden = false;
+  jugarOtra.addEventListener('click', () => { abrir(); pintarFondo(); intro(); });
 
   /* ---------- Imágenes (SVG propios de iconos.js) ---------- */
   function imagen(svg) {
@@ -234,8 +230,6 @@
   function ganar() {
     jugando = false;
     ganado = true;
-    if (!C.PRUEBA) { try { localStorage.setItem(CLAVE, 'ganado'); } catch (e) { /* ignorar */ } }
-    verPista.hidden = false;
     cosas = []; dibujar();
     C.lanzarConfeti(W / 2, H / 3, 140);
     mostrarPanel(texto(J.ganar), htmlPista(), 'Ver mi calendario 🎄', cerrar);
