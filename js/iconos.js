@@ -141,6 +141,35 @@
       <path d="M22 72 Q50 82 78 72" fill="none" stroke="${ORO}" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>
       <ellipse cx="38" cy="44" rx="6" ry="9" transform="rotate(30 38 44)" fill="#fff" opacity=".35"/>`),
 
+    // Caqui (la fruta) con carita
+    caqui: svg(`
+      <ellipse cx="50" cy="58" rx="36" ry="31" fill="#EE7A2B"/>
+      <ellipse cx="50" cy="62" rx="30" ry="24" fill="#F38A3A"/>
+      <path d="M50 30 L34 22 L40 34 L26 36 L40 40 L50 44 L60 40 L74 36 L60 34 L66 22Z" fill="${VERDE}"/>
+      <rect x="47.5" y="16" width="5" height="12" rx="2.5" fill="${MARRON_OSC}"/>
+      <circle cx="40" cy="60" r="3" fill="#3A2A22"/><circle cx="60" cy="60" r="3" fill="#3A2A22"/>
+      <path d="M44 68 q6 5 12 0" fill="none" stroke="#3A2A22" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="34" cy="67" r="4" fill="${ROSA}" opacity=".85"/><circle cx="66" cy="67" r="4" fill="${ROSA}" opacity=".85"/>
+      <ellipse cx="32" cy="48" rx="5" ry="8" transform="rotate(35 32 48)" fill="#fff" opacity=".3"/>`),
+
+    // Carbón (lo que NO hay que coger)
+    carbon: svg(`
+      <path d="M22 58 L30 34 L52 24 L74 32 L84 54 L74 78 L48 86 L26 78Z" fill="#2F2B2B"/>
+      <path d="M30 34 L52 24 L56 44 L36 50Z" fill="#4A4444"/>
+      <path d="M56 44 L74 32 L84 54 L64 60Z" fill="#3C3737"/>
+      <circle cx="40" cy="62" r="3" fill="#fff"/><circle cx="60" cy="62" r="3" fill="#fff"/>
+      <path d="M42 74 q8 -6 16 0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M34 54 l10 3 M66 54 l-10 3" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>`),
+
+    // Saco de Papá Noel (el que maneja ella)
+    saco: svg(`
+      <path d="M18 40 Q14 88 30 94 H70 Q86 88 82 40Z" fill="${ROJO}"/>
+      <path d="M18 40 Q14 88 30 94 H40 Q26 80 28 40Z" fill="${ROJO_OSC}" opacity=".5"/>
+      <ellipse cx="50" cy="40" rx="34" ry="9" fill="${ROJO_OSC}"/>
+      <ellipse cx="50" cy="38" rx="32" ry="7" fill="#5A1416"/>
+      <path d="M16 40 Q50 52 84 40 L84 47 Q50 60 16 47Z" fill="${BLANCO}"/>
+      <polygon points="${puntosEstrella(50, 72, 11, 5)}" fill="${ORO}"/>`),
+
     baston: svg(`
       <path d="M58 92 V36 a16 16 0 0 0 -32 0" fill="none" stroke="${BLANCO}" stroke-width="13" stroke-linecap="round"/>
       <path d="M58 92 V36 a16 16 0 0 0 -32 0" fill="none" stroke="${ROJO}" stroke-width="13" stroke-dasharray="7 7" stroke-linecap="butt"/>

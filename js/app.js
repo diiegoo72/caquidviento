@@ -802,6 +802,9 @@
   bucle();
   ajustarSaludo();
 
+  // Utilidades compartidas con js/juego.js
+  window.CAQUI = { ahora, partesMadrid, lanzarConfeti, rellenar, azar, PRUEBA, params, movimientoReducido };
+
   if (PRUEBA) {
     if (params.get('reset') === '1') mostrarToast('Progreso borrado 🧹');
     const abrir = +params.get('abrir');

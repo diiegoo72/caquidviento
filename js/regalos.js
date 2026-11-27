@@ -294,3 +294,27 @@ const FRASES_ESPERA = [
   '¿Has venido a mirar el contador? Añe-a-se-o 👏',
   'Ya queda menos, Anotop ✨'
 ];
+
+/* ---------------------------------------------------------------------
+   🎮 JUEGO DEL DÍA: «Atrapa los regalos»
+   Sale al entrar SOLO el día `fecha` (hora de España) hasta que gane.
+   Para usarlo otro día cambia `fecha` y los textos. Para quitarlo,
+   pon `fecha: ''`.
+   --------------------------------------------------------------------- */
+const JUEGO_HOY = {
+  fecha: '2026-11-27',
+  objetivo: 15,   // puntos para ganar
+  segundos: 30,   // duración de la partida
+  titulo: '¡Juego del día! 🎮',
+  intro: 'Escolta, {MOTE}: hoy no te libras de jugar. Mueve el saco con el dedo y atrapa {OBJETIVO} regalos en {SEGUNDOS} segundos. Ojo con el carbón, que resta.',
+  premioIntro: 'Si ganas, te llevas una pista del día 1 🔑',
+  perder: [
+    'Tah como ilipollah, {MOTE}. Otra vez 😂',
+    'Onichan, casi… ¡otra vez!',
+    'Has hecho {PUNTOS}. Te faltan {FALTAN}, no te rindas 💪',
+    'Uy, {MOTE}… ¿eso era todo? Venga, otra 😏',
+    'Los elfos se están riendo un poco. Demuéstrales quién manda 🧝'
+  ],
+  ganar: '¡Añe-a-se-o! 🎉 Lo has conseguido, {MOTE}.',
+  pista: 'Pista del día 1: vete preparando la espalda y los hombros, que tus contracturas tienen los días contados. Música relajante incluida. Promete que no te dormirás a la mitad 🤞💆‍♀️'
+};

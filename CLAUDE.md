@@ -28,6 +28,10 @@ Diego irá diciendo más motes y expresiones: añádelos aquí, al array `MOTES`
 ## Pantalla del contador (antes del 1/12)
 Textos fijos en `index.html` (`#espera`). En `js/regalos.js`: `FRASES_FALTA` (línea bajo el contador según las noches que quedan / última hora) y `FRASES_ESPERA` (frases que rotan cada 6 s). Tocar el mote del saludo lo cambia por otro; el saludo se encoge solo para caber en una línea (`ajustarSaludo` en `app.js`).
 
+## Juego del día
+`js/juego.js` («Atrapa los regalos»: saco con el dedo, regalos +1, carbón −2). Textos, fecha, objetivo, duración y premio en `JUEGO_HOY` (`js/regalos.js`). Sale al entrar solo el día `fecha` (hora España) hasta que gana (localStorage `caquiviento-juego-<fecha>`); después ese día aparece «🔑 Ver la pista del día 1» en la tarjeta de espera. Para otro día: cambia `fecha` y textos (y el texto del botón `#ver-pista` en `index.html` si el premio no es la pista del día 1); `fecha: ''` lo desactiva. Prueba: `?prueba=caqui&fecha=2026-11-27T20:00` o `&juego=1`. Usa `window.CAQUI` (expuesto al final de `app.js`).
+Primer juego (27/11/2026): premio = pista del día 1, que será un **vale por un masaje relajante** (aún hay que poner ese regalo en `REGALOS`).
+
 ## Estructura
 - `index.html` — página, metas Open Graph (URL absoluta de GitHub Pages).
 - `css/styles.css` — estilos. Paleta: rojo `#C0393B`, rosa `#F2A3A3`, crema `#F3E5CF`, verde `#1F9B57`, oro `#E8B64C`. Fuentes: Great Vibes (título), Fredoka (números/UI), Dancing Script (firma), Caveat (cartas).

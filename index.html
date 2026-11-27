@@ -116,6 +116,23 @@
       <p class="espera-frase" id="espera-frase" aria-live="off"></p>
       <p class="espera-firma">Con todo mi cariño, <span>Diego</span></p>
       <p class="espera-musica" id="espera-musica">Dale a la 🎵 de abajo mientras esperas ↘</p>
+      <button type="button" id="ver-pista" class="ver-pista" hidden>🔑 Ver la pista del día 1</button>
+    </div>
+  </div>
+
+  <!-- Juego del día (solo sale el día de JUEGO_HOY.fecha, hasta que gane) -->
+  <div id="juego" class="juego" hidden>
+    <canvas id="juego-lienzo" class="juego-lienzo" aria-label="Juego: atrapa los regalos"></canvas>
+    <div class="juego-marcador" id="juego-marcador" hidden>
+      <span>🎁 <strong id="juego-puntos">0</strong>/<span id="juego-objetivo">15</span></span>
+      <span>⏱️ <strong id="juego-tiempo">30</strong></span>
+    </div>
+    <div class="juego-panel" id="juego-panel">
+      <div class="juego-tarjeta" role="dialog" aria-modal="true" aria-labelledby="juego-titulo">
+        <p class="juego-titulo" id="juego-titulo"></p>
+        <div class="juego-cuerpo" id="juego-cuerpo"></div>
+        <button type="button" class="juego-boton" id="juego-boton"></button>
+      </div>
     </div>
   </div>
 
@@ -137,5 +154,6 @@
   <script src="js/iconos.js"></script>
   <script src="js/regalos.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/juego.js"></script>
 </body>
 </html>
