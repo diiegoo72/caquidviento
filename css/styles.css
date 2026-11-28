@@ -597,6 +597,12 @@ body.modal-abierto { overflow: hidden; }
   gap: 10px;
   touch-action: manipulation;
 }
+.juego-memory.grande {
+  width: min(94vw, 420px, calc(100vh - 130px));
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.juego-memory.grande .mem-cara { border-radius: 12px; }
 .mem-carta {
   aspect-ratio: 1;
   padding: 0;

@@ -247,13 +247,14 @@
   }
 
   /* =========================================================
-     Tipo «memory»: encontrar las 6 parejas
+     Tipo «memory»: encontrar las parejas (6 u 8)
      ========================================================= */
   function juegoMemory() {
     const INTENTOS = J.intentos || 18;
-    const FIGURAS = ['caqui', 'regalo', 'reno', 'bola', 'muneco', 'estrella'];
+    const FIGURAS = ['caqui', 'regalo', 'reno', 'bola', 'muneco', 'estrella', 'jengibre', 'arbol'].slice(0, J.parejas === 8 ? 8 : 6);
     const PAREJAS = FIGURAS.length;
     const elTablero = $('#juego-memory');
+    elTablero.classList.toggle('grande', PAREJAS === 8);
     elTablero.hidden = false;
     elMarcador.innerHTML = `<span>🃏 <strong id="mem-parejas">0</strong>/${PAREJAS}</span><span>Intentos <strong id="mem-intentos">0</strong>/${INTENTOS}</span>`;
     const elParejas = $('#mem-parejas');
@@ -311,7 +312,7 @@
 
     return {
       texto: (t, extra = {}) => C.rellenar(String(t)
-        .replace(/\{INTENTOS\}/g, INTENTOS).replace(/\{PAREJAS\}/g, extra.parejas ?? 0)),
+        .replace(/\{INTENTOS\}/g, INTENTOS).replace(/\{TOTAL\}/g, PAREJAS).replace(/\{PAREJAS\}/g, extra.parejas ?? 0)),
       preparar() { if (!elTablero.children.length) repartir(); },
       empezar() {
         abiertas = []; parejas = 0; intentos = 0; bloqueado = false; activo = true;

@@ -300,9 +300,9 @@ const FRASES_ESPERA = [
    Cada juego sale al entrar SOLO el día de su `fecha` (hora de España),
    se puede jugar las veces que quiera y al ganar se ve el `premio`.
    Tipos: 'atrapa' (atrapar regalos con el saco: objetivo + segundos)
-          'memory' (encontrar las 6 parejas: intentos)
+          'memory' (encontrar las parejas: parejas (6 u 8) + intentos)
    Comodines: {MOTE}, y según el tipo {OBJETIVO} {SEGUNDOS} {PUNTOS}
-   {FALTAN} (atrapa) o {INTENTOS} {PAREJAS} (memory).
+   {FALTAN} (atrapa) o {INTENTOS} {TOTAL} {PAREJAS} (memory).
    En `premio`, una línea en blanco separa párrafos.
    --------------------------------------------------------------------- */
 const JUEGOS = [
@@ -328,14 +328,15 @@ const JUEGOS = [
   {
     fecha: '2026-11-28',
     tipo: 'memory',
-    intentos: 18,   // intentos máximos para encontrar las 6 parejas
+    parejas: 8,     // 6 (fácil, 3 columnas) u 8 (difícil, 4 columnas)
+    intentos: 18,   // intentos máximos
     titulo: '¡Juego del día! 🃏',
-    intro: 'Escolta, {MOTE}: hoy toca memoria. Encuentra las 6 parejas en {INTENTOS} intentos como mucho.',
+    intro: 'Escolta, {MOTE}: hoy toca memoria. Encuentra las {TOTAL} parejas en {INTENTOS} intentos como mucho.',
     premioIntro: 'Si ganas, te espera una cartita mía 💌',
     perder: [
       'Tah como ilipollah, {MOTE}, ¡si estaba ahí! 😂',
       'Onichan, se te acabaron los intentos… ¡otra vez!',
-      'Has encontrado {PAREJAS} de 6. ¡Casi, {MOTE}!',
+      'Has encontrado {PAREJAS} de {TOTAL}. ¡Casi, {MOTE}!',
       'Esa memoria de pez, {MOTE}… venga, otra 🐟',
       'Los elfos dicen que a la próxima sí 🧝'
     ],
