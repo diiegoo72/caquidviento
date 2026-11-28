@@ -515,14 +515,13 @@ body.modal-abierto { overflow: hidden; }
   background:
     radial-gradient(120% 70% at 50% 0%, #CB4446 0%, var(--rojo) 50%, #8E2426 100%);
   overflow: hidden;
-  touch-action: none;
   user-select: none;
   -webkit-user-select: none;
   animation: aparecer .4s ease;
 }
 .juego[hidden] { display: none; }
 .juego.saliendo { animation: fundir .45s ease forwards; }
-.juego-lienzo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.juego-lienzo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
 .juego-marcador {
   position: absolute;
   top: calc(12px + env(safe-area-inset-top));
@@ -550,6 +549,8 @@ body.modal-abierto { overflow: hidden; }
   padding: 20px 16px;
   background: rgba(70, 6, 8, .35);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
 }
 .juego-panel[hidden] { display: none; }
 .juego-tarjeta {
@@ -594,6 +595,7 @@ body.modal-abierto { overflow: hidden; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  touch-action: manipulation;
 }
 .mem-carta {
   aspect-ratio: 1;

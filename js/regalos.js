@@ -341,6 +341,6 @@ const JUEGOS = [
     ],
     ganar: '¡Añe-a-se-o! 🎉 Qué memoria, {MOTE}.',
     premioTitulo: 'Tu cartita 💌',
-    premio: 'Escolta, {MOTE}:\n\nSi estás leyendo esto es que tienes mejor memoria que yo (que tampoco es muy difícil).\n\nQuedan solo tres noches para que empiece esto de verdad y yo estoy más nervioso que tú. Tengo 25 cajitas preparadas y en cada una va un trocito de lo mucho que te quiero. Iug, qué cursi. Pero es verdad.\n\nBesos de fresa 🍓\n— Diego'
+    premio: 'Escolta, Andrea.\n\nSi estás leyendo esto, es que tienes mejor memoria que yo. Que no es muy difícil, porque siempre me olvido de todo.\n\nQuedan solo 3 noches para que empiece esto de verdad y yo estoy más nervioso que tú. Tengo 25 sorpresas para ti. En cada una, algo especial que espero que te guste y demuestre lo mucho que te quiero. Y ha sonado súper cursi.\n\nDicho esto, que pases un feliz sábado. Disfruta de las luces de Plasencia y descansa mucho. Voy a comerme un bombón de Lindor en tu honor. Al rey negro te lo dejo (que sé que te encanta).\n\n¡Hasta la vista, vanguardista!\n— Diego'
   }
 ];
