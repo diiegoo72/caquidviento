@@ -296,25 +296,51 @@ const FRASES_ESPERA = [
 ];
 
 /* ---------------------------------------------------------------------
-   🎮 JUEGO DEL DÍA: «Atrapa los regalos»
-   Sale al entrar SOLO el día `fecha` (hora de España) hasta que gane.
-   Para usarlo otro día cambia `fecha` y los textos. Para quitarlo,
-   pon `fecha: ''`.
+   🎮 JUEGOS DEL DÍA
+   Cada juego sale al entrar SOLO el día de su `fecha` (hora de España),
+   se puede jugar las veces que quiera y al ganar se ve el `premio`.
+   Tipos: 'atrapa' (atrapar regalos con el saco: objetivo + segundos)
+          'memory' (encontrar las 6 parejas: intentos)
+   Comodines: {MOTE}, y según el tipo {OBJETIVO} {SEGUNDOS} {PUNTOS}
+   {FALTAN} (atrapa) o {INTENTOS} {PAREJAS} (memory).
+   En `premio`, una línea en blanco separa párrafos.
    --------------------------------------------------------------------- */
-const JUEGO_HOY = {
-  fecha: '2026-11-27',
-  objetivo: 20,   // puntos para ganar
-  segundos: 30,   // duración de la partida
-  titulo: '¡Juego del día! 🎮',
-  intro: 'Escolta, {MOTE}: hoy no te libras de jugar. Mueve el saco con el dedo y atrapa {OBJETIVO} regalos en {SEGUNDOS} segundos. Ojo con el carbón, que resta.',
-  premioIntro: 'Si ganas, te llevas una pista del día 1 🔑',
-  perder: [
-    'Tah como ilipollah, {MOTE}. Otra vez 😂',
-    'Onichan, casi… ¡otra vez!',
-    'Has hecho {PUNTOS}. Te faltan {FALTAN}, no te rindas 💪',
-    'Uy, {MOTE}… ¿eso era todo? Venga, otra 😏',
-    'Los elfos se están riendo un poco. Demuéstrales quién manda 🧝'
-  ],
-  ganar: '¡Añe-a-se-o! 🎉 Lo has conseguido, {MOTE}.',
-  pista: 'Pista del día 1: vete preparando la espalda y los hombros, que tus contracturas tienen los días contados. Música relajante incluida. Y si te quedas dormida a la mitad, vale: aquí nadie va a ser juzgado 😴💆‍♀️'
-};
+const JUEGOS = [
+  {
+    fecha: '2026-11-27',
+    tipo: 'atrapa',
+    objetivo: 20,   // puntos para ganar
+    segundos: 30,   // duración de la partida
+    titulo: '¡Juego del día! 🎮',
+    intro: 'Escolta, {MOTE}: hoy no te libras de jugar. Mueve el saco con el dedo y atrapa {OBJETIVO} regalos en {SEGUNDOS} segundos. Ojo con el carbón, que resta.',
+    premioIntro: 'Si ganas, te llevas una pista del día 1 🔑',
+    perder: [
+      'Tah como ilipollah, {MOTE}. Otra vez 😂',
+      'Onichan, casi… ¡otra vez!',
+      'Has hecho {PUNTOS}. Te faltan {FALTAN}, no te rindas 💪',
+      'Uy, {MOTE}… ¿eso era todo? Venga, otra 😏',
+      'Los elfos se están riendo un poco. Demuéstrales quién manda 🧝'
+    ],
+    ganar: '¡Añe-a-se-o! 🎉 Lo has conseguido, {MOTE}.',
+    premioTitulo: 'Tu pista 🔑',
+    premio: 'Pista del día 1: vete preparando la espalda y los hombros, que tus contracturas tienen los días contados. Música relajante incluida. Y si te quedas dormida a la mitad, vale: aquí nadie va a ser juzgado 😴💆‍♀️'
+  },
+  {
+    fecha: '2026-11-28',
+    tipo: 'memory',
+    intentos: 18,   // intentos máximos para encontrar las 6 parejas
+    titulo: '¡Juego del día! 🃏',
+    intro: 'Escolta, {MOTE}: hoy toca memoria. Encuentra las 6 parejas en {INTENTOS} intentos como mucho.',
+    premioIntro: 'Si ganas, te espera una cartita mía 💌',
+    perder: [
+      'Tah como ilipollah, {MOTE}, ¡si estaba ahí! 😂',
+      'Onichan, se te acabaron los intentos… ¡otra vez!',
+      'Has encontrado {PAREJAS} de 6. ¡Casi, {MOTE}!',
+      'Esa memoria de pez, {MOTE}… venga, otra 🐟',
+      'Los elfos dicen que a la próxima sí 🧝'
+    ],
+    ganar: '¡Añe-a-se-o! 🎉 Qué memoria, {MOTE}.',
+    premioTitulo: 'Tu cartita 💌',
+    premio: 'Escolta, {MOTE}:\n\nSi estás leyendo esto es que tienes mejor memoria que yo (que tampoco es muy difícil).\n\nQuedan solo tres noches para que empiece esto de verdad y yo estoy más nervioso que tú. Tengo 25 cajitas preparadas y en cada una va un trocito de lo mucho que te quiero. Iug, qué cursi. Pero es verdad.\n\nBesos de fresa 🍓\n— Diego'
+  }
+];

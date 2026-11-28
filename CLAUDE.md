@@ -28,9 +28,12 @@ Diego irá diciendo más motes y expresiones: añádelos aquí, al array `MOTES`
 ## Pantalla del contador (antes del 1/12)
 Textos fijos en `index.html` (`#espera`). En `js/regalos.js`: `FRASES_FALTA` (línea bajo el contador según las noches que quedan / última hora) y `FRASES_ESPERA` (frases que rotan cada 6 s). Tocar el mote del saludo lo cambia por otro; el saludo se encoge solo para caber en una línea (`ajustarSaludo` en `app.js`).
 
-## Juego del día
-`js/juego.js` («Atrapa los regalos»: saco con el dedo, regalos +1, carbón −2). Textos, fecha, objetivo, duración y premio en `JUEGO_HOY` (`js/regalos.js`). Sale **siempre** al abrir o recargar la web el día `fecha` (hora España); no se guarda nada, puede jugar las veces que quiera. Ese día aparece «🎮 Jugar otra vez» bajo el contador (`#jugar-otra`). Al ganar ve el premio (la pista). `fecha: ''` lo desactiva. Prueba: `?prueba=caqui&fecha=2026-11-27T20:00` o `&juego=1`. Usa `window.CAQUI` (expuesto al final de `app.js`).
-Primer juego (27/11/2026): premio = pista del día 1, que será un **vale por un masaje relajante** (aún hay que poner ese regalo en `REGALOS`).
+## Juegos del día
+`js/juego.js`. Los juegos están en el array `JUEGOS` de `js/regalos.js`: cada uno con `fecha`, `tipo`, textos (`titulo`, `intro`, `premioIntro`, `perder[]`, `ganar`), `premioTitulo` y `premio` (línea en blanco = párrafo nuevo; si hay varios párrafos se pinta como carta). Tipos:
+- `'atrapa'` — saco con el dedo, regalos +1, carbón −2 (`objetivo`, `segundos`).
+- `'memory'` — 6 parejas con iconos del calendario (`intentos`).
+Sale **siempre** al abrir o recargar la web el día de su `fecha` (hora España); no se guarda nada, puede jugar las veces que quiera. Ese día aparece «🎮 Jugar otra vez» bajo el contador (`#jugar-otra`). Para programar otro día basta con añadir una entrada. Prueba: `?prueba=caqui&fecha=2026-11-28T20:00` o `&juego=1`. Usa `window.CAQUI` (expuesto al final de `app.js`).
+Historial: 27/11 atrapa → pista del día 1 (el día 1 será un **vale por un masaje relajante**, aún hay que ponerlo en `REGALOS`). 28/11 memory → cartita de Diego.
 
 **Caché:** `index.html` carga CSS/JS con `?v=N`. Al cambiar cualquier CSS/JS, sube ese número en todos los enlaces para que el móvil no use versiones viejas.
 

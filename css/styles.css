@@ -568,14 +568,70 @@ body.modal-abierto { overflow: hidden; }
 .juego-cuerpo p { margin: 12px 0 0; font-size: 1.05rem; line-height: 1.45; text-wrap: balance; }
 .juego-cuerpo .juego-premio { font-weight: 700; color: var(--verde); }
 .juego-pista {
+  margin-top: 12px;
   padding: 14px 16px;
   border: 2px dashed var(--oro);
   border-radius: 16px;
   background: var(--papel);
-  font-family: var(--f-mano);
-  font-size: 1.45rem !important;
-  line-height: 1.2 !important;
 }
+.juego-cuerpo .juego-pista p {
+  margin: 0;
+  font-family: var(--f-mano);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+.juego-cuerpo .juego-pista p + p { margin-top: 10px; }
+.juego-pista.carta { text-align: left; }
+.juego-pista.carta p { text-wrap: pretty; }
+
+/* Memory */
+.juego-memory {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 24px);
+  transform: translate(-50%, -50%);
+  width: min(92vw, 380px, calc((100vh - 120px) * .75));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.mem-carta {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  perspective: 600px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.mem-interior {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .4s ease;
+}
+.mem-carta.volteada .mem-interior { transform: rotateY(180deg); }
+.mem-cara {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 4px 0 rgba(90, 10, 12, .35);
+}
+.mem-dorso {
+  background: var(--verde);
+  color: rgba(243, 229, 207, .55);
+  box-shadow: 0 4px 0 var(--verde-osc), inset 0 0 0 3px rgba(243, 229, 207, .35);
+}
+.mem-dorso svg { width: 46%; height: 46%; }
+.mem-frente { background: var(--crema); transform: rotateY(180deg); }
+.mem-frente svg { width: 74%; height: 74%; }
+.mem-carta.acertada .mem-frente { box-shadow: 0 4px 0 var(--oro-osc, #C9952F), 0 0 0 3px var(--oro), 0 0 18px rgba(246, 213, 122, .8); }
 .juego-boton {
   min-height: 48px;
   margin: 18px 0 0;

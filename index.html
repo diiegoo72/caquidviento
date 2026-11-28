@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 <body class="fase-cargando">
   <canvas id="nieve" class="nieve" aria-hidden="true"></canvas>
@@ -120,13 +120,11 @@
     </div>
   </div>
 
-  <!-- Juego del día (solo sale el día de JUEGO_HOY.fecha, hasta que gane) -->
+  <!-- Juego del día (sale el día de su fecha en JUEGOS, js/regalos.js) -->
   <div id="juego" class="juego" hidden>
-    <canvas id="juego-lienzo" class="juego-lienzo" aria-label="Juego: atrapa los regalos"></canvas>
-    <div class="juego-marcador" id="juego-marcador" hidden>
-      <span>🎁 <strong id="juego-puntos">0</strong>/<span id="juego-objetivo">15</span></span>
-      <span>⏱️ <strong id="juego-tiempo">30</strong></span>
-    </div>
+    <canvas id="juego-lienzo" class="juego-lienzo" aria-label="Juego: atrapa los regalos" hidden></canvas>
+    <div id="juego-memory" class="juego-memory" hidden></div>
+    <div class="juego-marcador" id="juego-marcador" hidden></div>
     <div class="juego-panel" id="juego-panel">
       <div class="juego-tarjeta" role="dialog" aria-modal="true" aria-labelledby="juego-titulo">
         <p class="juego-titulo" id="juego-titulo"></p>
@@ -151,9 +149,9 @@
 
   <canvas id="confeti" class="confeti" aria-hidden="true"></canvas>
 
-  <script src="js/iconos.js?v=4"></script>
-  <script src="js/regalos.js?v=4"></script>
-  <script src="js/app.js?v=4"></script>
-  <script src="js/juego.js?v=4"></script>
+  <script src="js/iconos.js?v=5"></script>
+  <script src="js/regalos.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
+  <script src="js/juego.js?v=5"></script>
 </body>
 </html>
